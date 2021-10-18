@@ -1,4 +1,15 @@
 package utilities;
 
 public enum ClothingSize {
+    S("Small"), M("Medium"), L("Large"), XL("Extra Large");
+    private String description;
+
+    ClothingSize(String description) {
+        this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return description;
+    }
 }
