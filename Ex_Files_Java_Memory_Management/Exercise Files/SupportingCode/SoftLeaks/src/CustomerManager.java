@@ -21,7 +21,12 @@ public class CustomerManager {
 	public Customer getNextCustomer() {
 		//should do:
 		//customers.remove(0);
-		return customers.get(0);
+		Customer nextCustomer = null;
+		synchronized(this) {
+			if (customers.size() > 0)
+				nextCustomer = customers.remove(0);
+		}
+		return nextCustomer;
 	}
 
 	public void howManyCustomers() {
